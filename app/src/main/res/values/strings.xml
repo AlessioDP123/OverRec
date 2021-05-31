@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OverRec</string>
+    <string name="tab_text_1">OverRec</string>
+    <string name="tab_text_2">Effects</string>
+    <string name="tab_text_3">Others</string>
+    <string name="noRecordings">No recordings yet</string>
+    <string name="floatingActionPlay_description">Play</string>
+    <string name="floatingActionRecord_description">Record</string>
+    <string name="yourRecordings">Your recordings:</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="press_btn_new_recording">Press the mic button <br/>to start the recording</string>
+</resources>
