@@ -6,84 +6,101 @@
     android:id="@+id/player_sheet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@android:color/white"
     app:behavior_hideable="true"
-    app:behavior_peekHeight="70dp"
+    app:behavior_peekHeight="100dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-
-    <SeekBar
-        android:id="@+id/player_seekbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/player_filename"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:background="@color/colorPrimaryDark"
-        android:weightSum="10"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/player_play_btn"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
-            android:layout_weight="4"
+            android:layout_weight="2"
             android:background="@color/colorPrimaryDark"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
             app:srcCompat="@drawable/player_play_btn" />
 
-        <TextView
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player_filename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:text="File Name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/playerSecondaryRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/open_sans_semibold"
+                android:gravity="top"
+                android:text="Artist, date, duration"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--        <TextView
             android:id="@+id/player_header_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="3"
             android:fontFamily="@font/open_sans_semibold"
             android:paddingTop="24dp"
             android:paddingBottom="24dp"
             android:text="Media Player"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp" /> -->
 
-        <TextView
-            android:id="@+id/player_header_title"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:fontFamily="@font/open_sans_semibold"
+            android:layout_gravity="center"
+            android:layout_weight="2"
             android:paddingTop="24dp"
-            android:paddingEnd="24dp"
             android:paddingBottom="24dp"
-            android:text="Not Playing"
-            android:textAlignment="textEnd"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/player_filename"
+    <SeekBar
+        android:id="@+id/player_seekbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:fontFamily="@font/open_sans_semibold"
-        android:paddingTop="24dp"
-        android:paddingBottom="24dp"
-        android:text="File Name"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="131dp" />
+        android:layout_height="12dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progress="37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
