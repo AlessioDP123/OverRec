@@ -70,10 +70,10 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
 
         //Intitialize Variables
         navController = Navigation.findNavController(view);
-        listBtn = view.findViewById(R.id.record_list_btn);
+        listBtn = view.findViewById(R.id.list_records_btn);
         recordBtn = view.findViewById(R.id.record_btn);
         timer = view.findViewById(R.id.record_timer);
-        filenameText = view.findViewById(R.id.record_filename);
+        filenameText = view.findViewById(R.id.record_instruction_label);
 
         /* Setting up on click listener
            - Class must implement 'View.OnClickListener' and override 'onClick' method
@@ -89,7 +89,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
         /*  Check, which button is pressed and do the task accordingly
         */
         switch (v.getId()) {
-            case R.id.record_list_btn:
+            case R.id.list_records_btn:
                 /*
                 Navigation Controller
                 Part of Android Jetpack, used for navigation between both fragments

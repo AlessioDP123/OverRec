@@ -6,8 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RecordFragment">
 
-    //si può aggiungere una nostra icona con imageview
-
     <TextView
         android:id="@+id/record_header_title"
         android:layout_width="wrap_content"
@@ -24,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/record_filename"
+        android:id="@+id/record_instruction_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -50,14 +48,14 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/record_filename" />
+        app:layout_constraintTop_toBottomOf="@id/record_instruction_label" />
 
     <ImageButton
         android:id="@+id/record_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:contentDescription="@string/floatingActionRecord_description"
+        android:contentDescription="@string/desc_record"
         android:src="@drawable/record_btn_stopped"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,11 +65,11 @@
         app:layout_constraintVertical_bias="0.54" />
 
     <ImageButton
-        android:id="@+id/record_list_btn"
+        android:id="@+id/list_records_btn"
         android:layout_width="57dp"
         android:layout_height="51dp"
         android:background="@android:color/white"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/desc_list_of_rec"
         android:padding="16dp"
         android:src="@drawable/recorder_list_btn"
         app:layout_constraintBottom_toBottomOf="@+id/record_btn"
@@ -86,8 +84,10 @@
         android:layout_width="222dp"
         android:layout_height="50dp"
         android:layout_marginTop="42dp"
+        android:autofillHints="@string/file_name"
         android:ems="10"
         android:fontFamily="@font/open_sans_semibold"
+        android:hint="@string/inputFilename"
         android:inputType="textPersonName"
         android:text="@string/inputFilename"
         android:textAlignment="center"
@@ -95,6 +95,6 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/record_filename" />
+        app:layout_constraintTop_toBottomOf="@+id/record_instruction_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

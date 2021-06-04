@@ -3,13 +3,17 @@
     <string name="tab_text_1">OverRec</string>
     <string name="tab_text_2">Effects</string>
     <string name="tab_text_3">Others</string>
-    <string name="noRecordings">No recordings yet</string>
-    <string name="floatingActionPlay_description">Play</string>
-    <string name="floatingActionRecord_description">Record</string>
-    <string name="yourRecordings">Your recordings:</string>
+    <string name="file_name">File name</string>
+    <string name="artist">Artist</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="noRecordings">No recordings yet</string>
+    <string name="yourRecordings">Your recordings:</string>
     <string name="press_btn_new_recording">Press the mic button <br/>to start the recording</string>
     <string name="inputFilename">Enter filename...</string>
+
+    <string name="desc_play">Play</string>
+    <string name="desc_record">Record</string>
+    <string name="desc_list_of_rec">List of recordings</string>
+    <string name="desc_close_arrow">Close the recorder</string>
+    <string name="desc_open_arrow">Open the recorder</string>
 </resources>
