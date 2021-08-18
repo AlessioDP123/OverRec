@@ -44,6 +44,7 @@ public class AudioListFragment extends Fragment implements AudioListAdapter.onIt
     //UI Elements
     private ImageButton playBtn;
     private TextView playerFilename;
+    private ImageButton navArrow;
 
     private SeekBar playerSeekbar;
     private Handler seekbarHandler;
@@ -71,6 +72,8 @@ public class AudioListFragment extends Fragment implements AudioListAdapter.onIt
         playBtn = view.findViewById(R.id.player_play_btn);
         playerFilename = view.findViewById(R.id.player_filename);
 
+        navArrow = view.findViewById(R.id.navArrow);
+
         playerSeekbar = view.findViewById(R.id.player_seekbar);
 
         String path = getActivity().getExternalFilesDir("/").getAbsolutePath();
@@ -86,14 +89,18 @@ public class AudioListFragment extends Fragment implements AudioListAdapter.onIt
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                if(newState == BottomSheetBehavior.STATE_HIDDEN){
+                if (newState == BottomSheetBehavior.STATE_HIDDEN) {
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
+                    navArrow.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_arrow_up));
+                } else if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+                    navArrow.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_arrow_down));
                 }
             }
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                //We cant do anything here for this app
+                // We don't have to do nothing while sliding
             }
         });
 

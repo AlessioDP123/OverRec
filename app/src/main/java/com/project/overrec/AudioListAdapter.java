@@ -58,7 +58,6 @@ public class AudioListAdapter extends RecyclerView.Adapter<AudioListAdapter.Audi
             list_date = itemView.findViewById(R.id.list_date);
 
             itemView.setOnClickListener(this);
-
             itemView.setOnLongClickListener(this);
         }
 
