@@ -59,6 +59,7 @@ public class AudioListAdapter extends RecyclerView.Adapter<AudioListAdapter.Audi
 
             itemView.setOnClickListener(this);
 
+            itemView.setOnLongClickListener(this);
         }
 
         @Override
