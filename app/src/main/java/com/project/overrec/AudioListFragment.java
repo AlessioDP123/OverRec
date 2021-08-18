@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -28,7 +29,7 @@ import java.io.IOException;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AudioListFragment extends Fragment implements AudioListAdapter.onItemListClick {
+public class AudioListFragment extends Fragment implements AudioListAdapter.onItemListClick, AudioListAdapter.onItemLongClick {
 
     private ConstraintLayout playerSheet;
     private BottomSheetBehavior bottomSheetBehavior;
@@ -79,7 +80,7 @@ public class AudioListFragment extends Fragment implements AudioListAdapter.onIt
         File directory = new File(path);
         allFiles = directory.listFiles();
 
-        audioListAdapter = new AudioListAdapter(allFiles, this);
+        audioListAdapter = new AudioListAdapter(allFiles, this, this);
 
         audioList.setHasFixedSize(true);
         audioList.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -142,6 +143,12 @@ public class AudioListFragment extends Fragment implements AudioListAdapter.onIt
         } else {
             playAudio(fileToPlay);
         }
+    }
+
+    @Override
+    public void onLongClickListener(File file, int position) {
+        Toast.makeText(getActivity(), "This is my Toast message!",
+                Toast.LENGTH_LONG).show();
     }
 
     private void pauseAudio() {
@@ -216,4 +223,5 @@ public class AudioListFragment extends Fragment implements AudioListAdapter.onIt
             stopAudio();
         }
     }
+
 }
