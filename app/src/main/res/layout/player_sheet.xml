@@ -2,6 +2,8 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:drawable="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/player_sheet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -135,5 +137,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contextClickable="true"
+        android:isScrollContainer="true">
+
+
+    <ScrollView
+        android:id="@+id/track_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true"
+
+        drawable:layout_constraintEnd_toEndOf="parent"
+        drawable:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contextClickable="true"
+            android:isScrollContainer="true">
+
+            <com.project.overrec.CustomView.AudioWaves
+                android:id="@+id/audioWaves"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                drawable:layout_constraintBottom_toBottomOf="parent"
+                drawable:layout_constraintEnd_toEndOf="parent"
+                drawable:layout_constraintHorizontal_bias="0.0"
+                drawable:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible">
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical" />-->
+            </com.project.overrec.CustomView.AudioWaves>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
